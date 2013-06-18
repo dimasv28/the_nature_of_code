@@ -3,8 +3,6 @@
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "DebugDraw.h"
-#include "PVector.h"
 #include "Example_1_2.h"
 #include "Example_1_3.h"
 
@@ -13,17 +11,13 @@ using namespace cocos2d;
 class HelloWorld : public cocos2d::CCLayer
 {
 protected:
-	Example_1_2 *ex_1_2;
-	Example_1_3 *ex_1_3;
-
-	void moveCircle(float dt);
 
 public:
-	void ccTouchesMoved(CCSet* touches, CCEvent* event);
-
-    virtual bool init();  
+    virtual bool init(); 
     static CCScene* scene();
     
+	void startEx_1_2(CCObject* pSender);
+	void startEx_1_3(CCObject* pSender);
     void menuCloseCallback(CCObject* pSender);
 
     // implement the "static node()" method manually

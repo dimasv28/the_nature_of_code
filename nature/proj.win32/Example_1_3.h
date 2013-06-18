@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "DebugDraw.h"
 #include "PVector.h"
 
 using namespace cocos2d;
@@ -15,10 +14,15 @@ protected:
 	PVector *center;
 
 public:
-	virtual void draw();
-    static Example_1_3* create();
+	virtual bool init(); 
+    static CCScene* scene();
+
+	void goMainMenu(CCObject* pSender);
  
-	void setMouse(float x, float y) { mouse->x = x; mouse->y = y; };
+	virtual void draw();
+	void ccTouchesMoved(CCSet* touches, CCEvent* event);
+
+	CREATE_FUNC(Example_1_3);
 };
 
 #endif  __EXAMPLE_1_3__

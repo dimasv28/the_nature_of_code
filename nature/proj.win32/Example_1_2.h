@@ -14,10 +14,14 @@ protected:
 	PVector *velocity;
 
 public:
-	virtual void draw();
-    static Example_1_2* create();
+	virtual bool init(); 
+    static CCScene* scene();
 
+	void goMainMenu(CCObject* pSender);
+	virtual void draw();
 	void moveCircle(float dt);
+
+	CREATE_FUNC(Example_1_2);
 };
 
 #endif  __EXAMPLE_1_2__

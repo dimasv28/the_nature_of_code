@@ -1,15 +1,62 @@
 #include "Example_1_2.h"
+#include "HelloWorldScene.h"
 
-Example_1_2* Example_1_2::create()
+using namespace cocos2d;
+
+CCScene* Example_1_2::scene()
 {
-	CCSize size = CCDirector::sharedDirector()->getWinSize();
-	Example_1_2 *ex = new Example_1_2();
-	ex->location  = new PVector(50,50);
-	ex->velocity = new PVector(1,1);
+    CCScene * scene = NULL;
+    do 
+    {
+        // 'scene' is an autorelease object
+        scene = CCScene::create();
+        CC_BREAK_IF(! scene);
 
-	//schedule( schedule_selector(HelloWorld::moveCircle), 0.0 );
+        // 'layer' is an autorelease object
+        Example_1_2 *layer = Example_1_2::create();
+        CC_BREAK_IF(! layer);
 
-	return ex;
+        // add layer as a child to scene
+        scene->addChild(layer);
+    } while (0);
+
+    // return the scene
+    return scene;
+}
+
+// on "init" you need to initialize your instance
+bool Example_1_2::init()
+{
+    bool bRet = false;
+    do 
+    {
+		CCSize size = CCDirector::sharedDirector()->getWinSize();
+
+		location  = new PVector(50,50);
+		velocity = new PVector(2,2);
+
+		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
+            "CloseNormal.png",
+            "CloseSelected.png",
+            this,
+            menu_selector(Example_1_2::goMainMenu));
+		CCMenu* pMenu = CCMenu::create(pMainMenuItem, NULL);
+		pMenu->setPosition(CCPointZero);
+		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
+        addChild(pMenu, 1);
+
+		schedule( schedule_selector(Example_1_2::moveCircle), 0.0 );
+
+        bRet = true;
+    } while (0);
+
+    return bRet;
+}
+
+void Example_1_2::goMainMenu(CCObject* pSender)
+{
+    CCScene *pHelloScene = HelloWorld::scene();
+	CCDirector::sharedDirector()->replaceScene(pHelloScene);
 }
 
 void Example_1_2::moveCircle(float dt)
@@ -31,5 +78,5 @@ void Example_1_2::moveCircle(float dt)
 void Example_1_2::draw()
 {
     ccDrawColor4F(1.0f, 0.0f, 0.0f, 1.0f);
-	//ccDrawLine(ccp(center->x,center->y),ccp(mouse->x,mouse->y));
+	ccDrawCircle(ccp(location->x, location->y),30,0,1000,false,1,1);
 }

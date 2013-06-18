@@ -31,11 +31,16 @@ bool HelloWorld::init()
     {
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-		ex_1_2 = Example_1_2::create(); 
-		ex_1_3 = Example_1_3::create();
-		addChild(ex_1_3);
+		CCLabelTTF* ex_1_2_label = CCLabelTTF::create("Example 1.2", "Arial", 20);
+		CCLabelTTF* ex_1_3_label = CCLabelTTF::create("Example 1.3", "Arial", 20);
+		CCMenuItemLabel *ex_1_2_item = CCMenuItemLabel::create(ex_1_2_label,this,menu_selector(HelloWorld::startEx_1_2));
+		CCMenuItemLabel *ex_1_3_item = CCMenuItemLabel::create(ex_1_3_label,this,menu_selector(HelloWorld::startEx_1_3));
 
-		this->setTouchEnabled(true);
+		CCMenu* pMenu = CCMenu::create(ex_1_2_item, ex_1_3_item, NULL);
+        pMenu->setPosition(CCPointZero);
+		ex_1_2_item->setPosition(ccp(size.width / 2, size.height - 50));
+		ex_1_3_item->setPosition(ccp(size.width / 2, size.height - 80));
+		addChild(pMenu, 1);
 
         bRet = true;
     } while (0);
@@ -43,15 +48,16 @@ bool HelloWorld::init()
     return bRet;
 }
 
-void HelloWorld::ccTouchesMoved(CCSet* touches, CCEvent* event)
+void HelloWorld::startEx_1_2(CCObject* pSender)
 {
-	CCTouch* touch = (CCTouch*)( touches->anyObject() );
-	CCPoint location = touch->getLocationInView();
-	location = CCDirector::sharedDirector()->convertToGL(location);
+	CCScene *pPlayScene = Example_1_2::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
+}
 
-	//Example 1.3
-	ex_1_3->setMouse(location.x, location.y);
-	ex_1_3->draw();
+void HelloWorld::startEx_1_3(CCObject* pSender)
+{
+    CCScene *pPlayScene = Example_1_3::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
