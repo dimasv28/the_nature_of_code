@@ -18,7 +18,7 @@ public:
     static CCScene* scene();
 
 	void goMainMenu(CCObject* pSender);
-	virtual void draw();
+	void draw();
 	void moveCircle(float dt);
 
 	CREATE_FUNC(Example_1_2);

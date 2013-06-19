@@ -29,6 +29,9 @@ public:
 		x = x / n;
 		y = y / n;
 	}
+	float mag() {
+		return sqrt(x*x + y*y);
+	}
 };
 
 #endif  __PVECTOR__

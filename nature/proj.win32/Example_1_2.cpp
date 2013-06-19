@@ -71,12 +71,10 @@ void Example_1_2::moveCircle(float dt)
 	if ((location->y > size.height) || (location->y < 0)) {
 		velocity->y = velocity->y * -1;
 	}
- 
-	draw();
 }
 
 void Example_1_2::draw()
 {
-    ccDrawColor4F(1.0f, 0.0f, 0.0f, 1.0f);
+	ccDrawColor4F(0.5f, 1.0f, 0.0f, 1.0f);
 	ccDrawCircle(ccp(location->x, location->y),30,0,1000,false,1,1);
 }
