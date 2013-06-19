@@ -35,6 +35,17 @@ bool Example_1_3::init()
 		mouse  = new PVector(50,50);
 		center = new PVector(size.width/2,size.height/2);
 
+		// "replace" coordinate system at the center of the screen
+		centerPoint = new CCNode();
+		centerPoint->setAnchorPoint(ccp(0,0));
+		centerPoint->setPosition(size.width/2,size.height/2);
+		addChild(centerPoint);
+
+		// add line on the new coordinate system
+		line = DebugDraw::create();
+		centerPoint->addChild(line);
+
+		// main menu button
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
             "CloseSelected.png",
@@ -61,18 +72,21 @@ void Example_1_3::goMainMenu(CCObject* pSender)
 
 void Example_1_3::ccTouchesMoved(cocos2d::CCSet* touches, cocos2d::CCEvent* event)
 {
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	CCTouch* touch = (CCTouch*)( touches->anyObject() );
 	CCPoint location = touch->getLocationInView();
 	location = CCDirector::sharedDirector()->convertToGL(location);
-
-	//Example 1.3
+	
+	//Example 1.4: Multiplying a vector
 	mouse->x = location.x;
 	mouse->y = location.y;
-	draw();
+	mouse->sub(center);
+	mouse->mult(0.5);
+	drawLine();
 }
 
-void Example_1_3::draw()
+void Example_1_3::drawLine()
 {
-    ccDrawColor4F(1.0f, 0.0f, 0.0f, 1.0f);
-	ccDrawLine(ccp(center->x,center->y),ccp(mouse->x,mouse->y));
+	line->clear();
+	line->appendLine(ccp(0,0),ccp(mouse->x,mouse->y),100,250,2,1);
 }

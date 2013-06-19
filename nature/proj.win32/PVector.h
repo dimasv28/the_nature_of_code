@@ -21,6 +21,14 @@ public:
 		x = x - v->x;
 		y = y - v->y;
 	}
+	void mult(float n) {
+		x = x * n;
+		y = y * n;
+	}
+	void div(float n) {
+		x = x / n;
+		y = y / n;
+	}
 };
 
 #endif  __PVECTOR__

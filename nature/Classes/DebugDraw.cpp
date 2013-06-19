@@ -71,18 +71,6 @@ void DebugDraw::appendPoint(float x, float y, float r, float g, float b)
 
 void DebugDraw::appendPoint(CCPoint pt, float r, float g, float b)
 {
-    CCSprite *sp = CCSprite::create("circle.png");
-    sp->setPosition(pt);
-    ccColor3B c = {144,7,23};
-    sp->setColor(c);
-    if (m_points->size() == 0) {
-        sp->setScale(1);
-    } else {
-        sp->setScale(0.5);
-    }
-    addChild(sp);
-    
-    
     DebugPoint dp;
     dp.pt = pt;
     dp.r = r;
