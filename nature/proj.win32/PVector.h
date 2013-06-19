@@ -32,6 +32,12 @@ public:
 	float mag() {
 		return sqrt(x*x + y*y);
 	}
+	void normalize() {
+		float m = mag();
+		if (m != 0) {
+			div(m);
+		}
+	}
 };
 
 #endif  __PVECTOR__

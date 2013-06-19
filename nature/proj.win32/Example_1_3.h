@@ -29,6 +29,7 @@ public:
 
 	void example_1_4_func();
 	void example_1_5_func();
+	void example_1_6_func();
 
 	CREATE_FUNC(Example_1_3);
 };

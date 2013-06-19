@@ -86,7 +86,8 @@ void Example_1_3::ccTouchesMoved(cocos2d::CCSet* touches, cocos2d::CCEvent* even
 	mouse->sub(center);
 
 	//example_1_4_func();
-	example_1_5_func();
+	//example_1_5_func();
+	example_1_6_func();
 
 	drawLine();
 }
@@ -102,6 +103,11 @@ void Example_1_3::example_1_5_func()
 	drawRect(m);
 }
 
+void Example_1_3::example_1_6_func()
+{//Example 1.5: Vector magnitude
+	mouse->normalize();
+	mouse->mult(100);
+}
 
 void Example_1_3::drawLine()
 {
