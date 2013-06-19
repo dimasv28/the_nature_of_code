@@ -58,6 +58,12 @@
     <ClInclude Include="Example_1_2.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Example_1_7.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -76,6 +82,12 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Example_1_2.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_1_7.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

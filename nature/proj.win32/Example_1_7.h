@@ -1,29 +1,26 @@
-#ifndef __EXAMPLE_1_2__
-#define __EXAMPLE_1_2__
+#ifndef __EXAMPLE_1_7__
+#define __EXAMPLE_1_7__
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "DebugDraw.h"
 #include "PVector.h"
+#include "Mover.h"
 
 using namespace cocos2d;
 
-class Example_1_2 : public cocos2d::CCLayer
+class Example_1_7 : public cocos2d::CCLayer
 {
 protected:
-	PVector *location;
-	PVector *velocity;
-	DebugDraw *circle;
+	Mover *mover;
 
 public:
 	virtual bool init(); 
     static CCScene* scene();
 
 	void goMainMenu(CCObject* pSender);
-	void draw();
 	void moveCircle(float dt);
 
-	CREATE_FUNC(Example_1_2);
+	CREATE_FUNC(Example_1_7);
 };
 
-#endif  __EXAMPLE_1_2__
+#endif  __EXAMPLE_1_7__

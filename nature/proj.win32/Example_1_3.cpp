@@ -104,7 +104,7 @@ void Example_1_3::example_1_5_func()
 }
 
 void Example_1_3::example_1_6_func()
-{//Example 1.5: Vector magnitude
+{//Example 1.6: Normalizing a vector
 	mouse->normalize();
 	mouse->mult(100);
 }
