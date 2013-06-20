@@ -16,6 +16,8 @@ protected:
 	CCNode *centerPoint;
 	DebugDraw *line;
 	DebugDraw *rect;
+	CCLabelTTF *exLabel;
+	bool repeat;
 
 public:
 	virtual bool init(); 
@@ -27,6 +29,7 @@ public:
 	void drawLine();
 	void drawRect(float m);
 
+	void example_1_3_func();
 	void example_1_4_func();
 	void example_1_5_func();
 	void example_1_6_func();

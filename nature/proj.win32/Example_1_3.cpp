@@ -31,6 +31,7 @@ bool Example_1_3::init()
     do 
     {
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
+		repeat = true;
 
 		mouse  = new PVector(50,50);
 		center = new PVector(size.width/2,size.height/2);
@@ -47,6 +48,11 @@ bool Example_1_3::init()
 		// add rectangle
 		rect = DebugDraw::create();
 		addChild(rect);
+
+		exLabel = CCLabelTTF::create("Click and move to start", "Arial", 16);
+		exLabel->setPosition(ccp(size.width/2,size.height-20));
+
+		addChild(exLabel);
 
 		// main menu button
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
@@ -84,27 +90,48 @@ void Example_1_3::ccTouchesMoved(cocos2d::CCSet* touches, cocos2d::CCEvent* even
 	mouse->x = location.x;
 	mouse->y = location.y;
 	mouse->sub(center);
-
+	
+	//example_1_3_func();
 	//example_1_4_func();
-	//example_1_5_func();
-	example_1_6_func();
+	example_1_5_func();
+	//example_1_6_func();
 
 	drawLine();
 }
 
+void Example_1_3::example_1_3_func()
+{//Example 1.3: Vector subtraction
+	if(repeat) {
+		repeat = false;
+		exLabel->setString("Example 1.3: Vector subtraction\n(Uncomment required function in code to see other Example)");
+	}
+}
+
 void Example_1_3::example_1_4_func()
 {//Example 1.4: Multiplying a vector
+	if(repeat) {
+		repeat = false;
+		exLabel->setString("Example 1.4: Multiplying a vector\n(Uncomment required function in code to see other Example)");
+	}
 	mouse->mult(0.5);
 }
 
 void Example_1_3::example_1_5_func()
 {//Example 1.5: Vector magnitude
+	if(repeat) {
+		repeat = false;
+		exLabel->setString("Example 1.5: Vector magnitude\n(Uncomment required function in code to see other Example)");
+	}
 	float m = mouse->mag();
 	drawRect(m);
 }
 
 void Example_1_3::example_1_6_func()
 {//Example 1.6: Normalizing a vector
+	if(repeat) {
+		repeat = false;
+		exLabel->setString("Example 1.6: Normalizing a vector\n(Uncomment required function in code to see other Example)");
+	}
 	mouse->normalize();
 	mouse->mult(100);
 }
