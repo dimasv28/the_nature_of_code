@@ -35,6 +35,11 @@ bool Example_1_7::init()
 		mover = new Mover();
 		addChild(mover);
 
+		// lebel of example
+		exLabel = CCLabelTTF::create("Example 1.9: Motion 101 (velocity and random acceleration)", "Arial", 16);
+		exLabel->setPosition(ccp(size.width/2,size.height-20));
+		addChild(exLabel);
+
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
             "CloseSelected.png",
@@ -63,7 +68,7 @@ void Example_1_7::moveCircle(float dt)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-	// Example 1.7: Motion 101 (velocity)
+	// Example 1.9: Motion 101 (velocity and random acceleration)
 	mover->update();
 	mover->display();
 	mover->checkEdges();

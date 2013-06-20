@@ -12,6 +12,7 @@ class Example_1_7 : public cocos2d::CCLayer
 {
 protected:
 	Mover *mover;
+	CCLabelTTF *exLabel;
 
 public:
 	virtual bool init(); 

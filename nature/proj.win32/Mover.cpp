@@ -16,6 +16,11 @@ Mover::Mover()
 
 void Mover::update()
 {
+	//Example 1.9: Motion 101 (velocity and random acceleration)
+	acceleration->random2D();
+	acceleration->mult(0.5);
+
+	//Example 1.8: Motion 101 (velocity and constant acceleration)
 	velocity->add(acceleration);
 	velocity->limit(topspeed);
 	location->add(velocity);

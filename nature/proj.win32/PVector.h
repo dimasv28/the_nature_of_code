@@ -44,6 +44,15 @@ public:
 			mult(max);
 		}
 	}
+	void random2D() {
+	// rand -1 / 1
+		int r1 = rand() % 2;
+		int r2 = rand() % 2;
+		if(!r1)	{ r1 = -1; }
+		if(!r2)	{ r2 = -1; }
+		x = r1;
+		y = r2;
+	}
 };
 
 #endif  __PVECTOR__
