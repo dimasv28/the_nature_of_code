@@ -38,6 +38,12 @@ public:
 			div(m);
 		}
 	}
+	void limit(float max) {
+		if ( mag() > max ) {
+			normalize();
+			mult(max);
+		}
+	}
 };
 
 #endif  __PVECTOR__

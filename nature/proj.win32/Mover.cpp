@@ -6,7 +6,9 @@ Mover::Mover()
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
 	location = new PVector(rand() % (int)(size.width), rand() % (int)(size.height));
-    velocity = new PVector(rand() % (-2) + 2, rand() % (-2) + 2);
+    velocity = new PVector(0, 0);
+	acceleration = new PVector(-0.001,0.01);
+	topspeed = 10;
 
 	circle = DebugDraw::create();
 	addChild(circle);
@@ -14,6 +16,8 @@ Mover::Mover()
 
 void Mover::update()
 {
+	velocity->add(acceleration);
+	velocity->limit(topspeed);
 	location->add(velocity);
 }
 

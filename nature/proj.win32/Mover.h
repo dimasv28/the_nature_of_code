@@ -12,6 +12,9 @@ class Mover : public cocos2d::CCLayer {
 protected:
 	PVector *location;
 	PVector *velocity;
+	PVector *acceleration;
+	float topspeed;
+
 	DebugDraw *circle;
 
 public:

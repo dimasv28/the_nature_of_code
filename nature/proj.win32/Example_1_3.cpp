@@ -49,9 +49,9 @@ bool Example_1_3::init()
 		rect = DebugDraw::create();
 		addChild(rect);
 
+		// lebel of example
 		exLabel = CCLabelTTF::create("Click and move to start", "Arial", 16);
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
-
 		addChild(exLabel);
 
 		// main menu button
