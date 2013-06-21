@@ -5,8 +5,10 @@
 #include "Box2D/Box2D.h"
 #include "DebugDraw.h"
 #include "PVector.h"
+#include "Example_1_7.h"
 
 using namespace cocos2d;
+class Example_1_7;
 
 class Mover : public cocos2d::CCLayer {
 protected:
@@ -18,9 +20,8 @@ protected:
 	DebugDraw *circle;
 
 public:
-
 	Mover();
-	void update();
+	void update(PVector *mouse);
 	void display();
 	void checkEdges();
 };

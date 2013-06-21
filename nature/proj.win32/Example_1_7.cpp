@@ -34,9 +34,11 @@ bool Example_1_7::init()
 
 		mover = new Mover();
 		addChild(mover);
+		
+		mouse = new PVector(size.width/2, size.height/2);
 
 		// lebel of example
-		exLabel = CCLabelTTF::create("Example 1.9: Motion 101 (velocity and random acceleration)", "Arial", 16);
+		exLabel = CCLabelTTF::create("Example 1.10: Accelerating towards the mouse", "Arial", 16);
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
 		addChild(exLabel);
 
@@ -51,6 +53,8 @@ bool Example_1_7::init()
         addChild(pMenu, 1);
 
 		schedule( schedule_selector(Example_1_7::moveCircle), 0.0 );
+
+		setTouchEnabled(true);
 
         bRet = true;
     } while (0);
@@ -69,7 +73,18 @@ void Example_1_7::moveCircle(float dt)
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
 	// Example 1.9: Motion 101 (velocity and random acceleration)
-	mover->update();
+	mover->update(mouse);
 	mover->display();
 	mover->checkEdges();
+}
+
+void Example_1_7::ccTouchesMoved(CCSet* touches, CCEvent* event)
+{
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
+	CCTouch* touch = (CCTouch*)( touches->anyObject() );
+	CCPoint location = touch->getLocationInView();
+	location = CCDirector::sharedDirector()->convertToGL(location);
+
+	mouse->x = location.x;
+	mouse->y = location.y;
 }

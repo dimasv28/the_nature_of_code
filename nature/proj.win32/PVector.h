@@ -1,6 +1,9 @@
 #ifndef __PVECTOR__
 #define __PVECTOR__
 
+#include "cocos2d.h"
+#include "Box2D/Box2D.h"
+
 class PVector {
 protected:
 
@@ -9,50 +12,21 @@ public:
 	float y;
 
 	PVector();
-	PVector(float x_, float y_)	{
-		x = x_;
-		y = y_;
-	}
-	void add(PVector *v) {
-		y = y + v->y;
-		x = x + v->x;
-	}
-	void sub(PVector *v) {
-		x = x - v->x;
-		y = y - v->y;
-	}
-	void mult(float n) {
-		x = x * n;
-		y = y * n;
-	}
-	void div(float n) {
-		x = x / n;
-		y = y / n;
-	}
-	float mag() {
-		return sqrt(x*x + y*y);
-	}
-	void normalize() {
-		float m = mag();
-		if (m != 0) {
-			div(m);
-		}
-	}
-	void limit(float max) {
-		if ( mag() > max ) {
-			normalize();
-			mult(max);
-		}
-	}
-	void random2D() {
-	// rand -1 / 1
-		int r1 = rand() % 2;
-		int r2 = rand() % 2;
-		if(!r1)	{ r1 = -1; }
-		if(!r2)	{ r2 = -1; }
-		x = r1;
-		y = r2;
-	}
+	PVector(float x_, float y_);
+
+	void add(PVector *v);
+	void sub(PVector *v);
+	void mult(float n);
+	void div(float n);
+	float mag();
+	void normalize();
+	void limit(float max);
+	void random2D();
+
+	static PVector *add(PVector *v1, PVector *v2);
+	static PVector *sub(PVector *v1, PVector *v2);
+	static PVector *mult(PVector *v1, float n);
+	static PVector *div(PVector *v1, float n);
 };
 
 #endif  __PVECTOR__

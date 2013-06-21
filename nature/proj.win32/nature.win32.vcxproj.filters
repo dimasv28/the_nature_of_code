@@ -90,5 +90,8 @@
     <ClCompile Include="Mover.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="PVector.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

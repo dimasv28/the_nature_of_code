@@ -1,5 +1,5 @@
 #include "Mover.h"
-#include "Math.h"
+#include "Example_1_7.h"
 
 Mover::Mover()
 {
@@ -8,17 +8,23 @@ Mover::Mover()
 	location = new PVector(rand() % (int)(size.width), rand() % (int)(size.height));
     velocity = new PVector(0, 0);
 	acceleration = new PVector(-0.001,0.01);
-	topspeed = 10;
+	topspeed = 6;
 
 	circle = DebugDraw::create();
 	addChild(circle);
 }
 
-void Mover::update()
+void Mover::update(PVector *mouse)
 {
+	//Example 1.10: Accelerating towards the mouse
+	PVector *dir = PVector::sub(mouse,location);
+	dir->normalize();
+    dir->mult(0.3);
+	acceleration = dir;
+
 	//Example 1.9: Motion 101 (velocity and random acceleration)
-	acceleration->random2D();
-	acceleration->mult(0.5);
+	//acceleration->random2D();
+	//acceleration->mult(0.3);
 
 	//Example 1.8: Motion 101 (velocity and constant acceleration)
 	velocity->add(acceleration);
