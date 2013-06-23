@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{d6c970c4-541b-4576-bcf8-1a4af2bc0f2f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{eb71455e-c046-4f0f-9c17-4435ced81f46}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{253fa848-7082-4332-b521-f97397b3de36}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\nature_2.ico">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="nature_2.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="PVector.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DebugDraw.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Example_2_1.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="PVector.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DebugDraw.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_2_1.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
