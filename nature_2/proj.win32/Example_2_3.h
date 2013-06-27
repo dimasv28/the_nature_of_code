@@ -19,6 +19,7 @@ protected:
 	int arrLength;
 	PVector *mouse;
 	CCLabelTTF *exLabel;
+	CCLabelTTF *exLabel2;
 	
 public:
 	virtual bool init(); 

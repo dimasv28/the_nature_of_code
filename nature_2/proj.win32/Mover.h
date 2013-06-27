@@ -25,6 +25,7 @@ public:
 	void checkEdges();
 	void applyForce(PVector *force);
 
+	PVector *getVelocity() { return velocity; };
 	float getMass() { return mass; };
 };
 

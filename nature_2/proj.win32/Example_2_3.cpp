@@ -43,9 +43,12 @@ bool Example_2_3::init()
 		mouse = new PVector(size.width/2, size.height/2);
 
 		// lebel of example
-		exLabel = CCLabelTTF::create("Example 2.3: Gravity scaled by mass", "Arial", 16);
+		exLabel = CCLabelTTF::create("Example 2.3: Gravity scaled by mass\n(Uncomment required lines in code to see other Example)", "Arial", 16);
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
-		addChild(exLabel);
+		exLabel2 = CCLabelTTF::create("Example 2.4: Including friction\n(Uncomment required lines in code to see other Example)", "Arial", 16);
+		exLabel2->setPosition(ccp(size.width/2,size.height-20));
+		//addChild(exLabel);	// example 2.3
+		addChild(exLabel2);	// example 2.4
 
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
@@ -76,13 +79,20 @@ void Example_2_3::goMainMenu(CCObject* pSender)
 void Example_2_3::moveCircle(float dt)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
-	PVector *wind = new PVector(0.01,0);
+	PVector *wind = new PVector(0.02,0);
 
 	the_iterator = movers->begin();
 	while (the_iterator != movers->end()) {
 		float m = (*the_iterator)->getMass();
 		PVector *gravity = new PVector(0,-0.1*m);
 
+		float c = 0.1;
+		PVector *friction = new PVector((*the_iterator)->getVelocity()->x,(*the_iterator)->getVelocity()->y);
+		friction->mult(-1);
+		friction->normalize();
+		friction->mult(c);
+
+		(*the_iterator)->applyForce(friction);	//Example 2.4: Including friction
 		(*the_iterator)->applyForce(wind);
 		(*the_iterator)->applyForce(gravity);
 

@@ -33,7 +33,7 @@ bool HelloWorld::init()
 
 		CCLabelTTF* ex_2_1_label = CCLabelTTF::create("Example 2.1", "Arial", 20);
 		CCLabelTTF* ex_2_2_label = CCLabelTTF::create("Example 2.2", "Arial", 20);
-		CCLabelTTF* ex_2_3_label = CCLabelTTF::create("Example 2.3", "Arial", 20);
+		CCLabelTTF* ex_2_3_label = CCLabelTTF::create("Example 2.3-2.4", "Arial", 20);
 		CCMenuItemLabel *ex_2_1_item = CCMenuItemLabel::create(ex_2_1_label,this,menu_selector(HelloWorld::startEx_2_1));
 		CCMenuItemLabel *ex_2_2_item = CCMenuItemLabel::create(ex_2_2_label,this,menu_selector(HelloWorld::startEx_2_2));
 		CCMenuItemLabel *ex_2_3_item = CCMenuItemLabel::create(ex_2_3_label,this,menu_selector(HelloWorld::startEx_2_3));
