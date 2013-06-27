@@ -1,9 +1,9 @@
-#include "Example_2_2.h"
+#include "Example_2_3.h"
 #include "HelloWorldScene.h"
 
 using namespace cocos2d;
 
-CCScene* Example_2_2::scene()
+CCScene* Example_2_3::scene()
 {
     CCScene * scene = NULL;
     do 
@@ -13,7 +13,7 @@ CCScene* Example_2_2::scene()
         CC_BREAK_IF(! scene);
 
         // 'layer' is an autorelease object
-        Example_2_2 *layer = Example_2_2::create();
+        Example_2_3 *layer = Example_2_3::create();
         CC_BREAK_IF(! layer);
 
         // add layer as a child to scene
@@ -25,7 +25,7 @@ CCScene* Example_2_2::scene()
 }
 
 // on "init" you need to initialize your instance
-bool Example_2_2::init()
+bool Example_2_3::init()
 {
     bool bRet = false;
     do 
@@ -35,7 +35,7 @@ bool Example_2_2::init()
 		movers = new vector<Mover*>;
 
 		for (int i = 0; i < arrLength; i++) {
-			Mover *mover = new Mover(rand() % 5 + 1, rand() % (int)(size.width), rand() % (int)(size.height));
+			Mover *mover = new Mover(rand() % 5 + 1, rand() % (int)(size.width), 150);
 			movers->push_back(mover);
 			addChild(mover);
 		}
@@ -43,7 +43,7 @@ bool Example_2_2::init()
 		mouse = new PVector(size.width/2, size.height/2);
 
 		// lebel of example
-		exLabel = CCLabelTTF::create("Example 2.2: Forces acting on many objects", "Arial", 16);
+		exLabel = CCLabelTTF::create("Example 2.3: Gravity scaled by mass", "Arial", 16);
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
 		addChild(exLabel);
 
@@ -51,13 +51,13 @@ bool Example_2_2::init()
             "CloseNormal.png",
             "CloseSelected.png",
             this,
-            menu_selector(Example_2_2::goMainMenu));
+            menu_selector(Example_2_3::goMainMenu));
 		CCMenu* pMenu = CCMenu::create(pMainMenuItem, NULL);
 		pMenu->setPosition(CCPointZero);
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
         addChild(pMenu, 1);
 
-		schedule( schedule_selector(Example_2_2::moveCircle), 0.0 );
+		schedule( schedule_selector(Example_2_3::moveCircle), 0.0 );
 
 		setTouchEnabled(true);
 
@@ -67,20 +67,22 @@ bool Example_2_2::init()
     return bRet;
 }
 
-void Example_2_2::goMainMenu(CCObject* pSender)
+void Example_2_3::goMainMenu(CCObject* pSender)
 {
     CCScene *pHelloScene = HelloWorld::scene();
 	CCDirector::sharedDirector()->replaceScene(pHelloScene);
 }
 
-void Example_2_2::moveCircle(float dt)
+void Example_2_3::moveCircle(float dt)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	PVector *wind = new PVector(0.01,0);
-	PVector *gravity = new PVector(0,-0.1);
 
 	the_iterator = movers->begin();
 	while (the_iterator != movers->end()) {
+		float m = (*the_iterator)->getMass();
+		PVector *gravity = new PVector(0,-0.1*m);
+
 		(*the_iterator)->applyForce(wind);
 		(*the_iterator)->applyForce(gravity);
 
@@ -92,7 +94,7 @@ void Example_2_2::moveCircle(float dt)
 	}
 }
 
-void Example_2_2::ccTouchesMoved(CCSet* touches, CCEvent* event)
+void Example_2_3::ccTouchesMoved(CCSet* touches, CCEvent* event)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	CCTouch* touch = (CCTouch*)( touches->anyObject() );

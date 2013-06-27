@@ -24,6 +24,8 @@ public:
 	void display();
 	void checkEdges();
 	void applyForce(PVector *force);
+
+	float getMass() { return mass; };
 };
 
 #endif  __MOVER__

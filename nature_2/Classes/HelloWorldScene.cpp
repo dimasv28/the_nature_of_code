@@ -33,13 +33,16 @@ bool HelloWorld::init()
 
 		CCLabelTTF* ex_2_1_label = CCLabelTTF::create("Example 2.1", "Arial", 20);
 		CCLabelTTF* ex_2_2_label = CCLabelTTF::create("Example 2.2", "Arial", 20);
+		CCLabelTTF* ex_2_3_label = CCLabelTTF::create("Example 2.3", "Arial", 20);
 		CCMenuItemLabel *ex_2_1_item = CCMenuItemLabel::create(ex_2_1_label,this,menu_selector(HelloWorld::startEx_2_1));
 		CCMenuItemLabel *ex_2_2_item = CCMenuItemLabel::create(ex_2_2_label,this,menu_selector(HelloWorld::startEx_2_2));
+		CCMenuItemLabel *ex_2_3_item = CCMenuItemLabel::create(ex_2_3_label,this,menu_selector(HelloWorld::startEx_2_3));
 
-		CCMenu* pMenu = CCMenu::create(ex_2_1_item, ex_2_2_item, NULL);
+		CCMenu* pMenu = CCMenu::create(ex_2_1_item, ex_2_2_item, ex_2_3_item, NULL);
         pMenu->setPosition(CCPointZero);
 		ex_2_1_item->setPosition(ccp(size.width / 2, size.height - 80));
 		ex_2_2_item->setPosition(ccp(size.width / 2, size.height - 110));
+		ex_2_3_item->setPosition(ccp(size.width / 2, size.height - 140));
 		addChild(pMenu, 1);
 
         bRet = true;
@@ -57,6 +60,12 @@ void HelloWorld::startEx_2_1(CCObject* pSender)
 void HelloWorld::startEx_2_2(CCObject* pSender)
 {
 	CCScene *pPlayScene = Example_2_2::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
+}
+
+void HelloWorld::startEx_2_3(CCObject* pSender)
+{
+	CCScene *pPlayScene = Example_2_3::scene();
 	CCDirector::sharedDirector()->replaceScene(pPlayScene);
 }
 
