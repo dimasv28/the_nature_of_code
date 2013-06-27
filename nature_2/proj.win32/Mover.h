@@ -7,7 +7,6 @@
 #include "PVector.h"
 
 using namespace cocos2d;
-class Example_1_7;
 
 class Mover : public cocos2d::CCLayer {
 protected:
@@ -20,7 +19,7 @@ protected:
 	DebugDraw *circle;
 
 public:
-	Mover();
+	Mover(float m, float x , float y);
 	void update(PVector *mouse);
 	void display();
 	void checkEdges();

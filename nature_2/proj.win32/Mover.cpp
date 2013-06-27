@@ -1,14 +1,14 @@
 #include "Mover.h"
 
-Mover::Mover()
+Mover::Mover(float m, float x , float y)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-	location = new PVector(50, 150);
+	location = new PVector(x, y);
     velocity = new PVector(0,0);
 	acceleration = new PVector(0,0);
 	topspeed = 6;
-	mass = 1;
+	mass = m;
 
 	circle = DebugDraw::create();
 	addChild(circle);
@@ -25,7 +25,7 @@ void Mover::update(PVector *mouse)
 void Mover::display()
 {
 	circle->clear();
-	float r = 30;
+	float r = 5*mass;
 	for(int alfa=0; alfa<360; alfa++)
 	{
 		circle->appendPoint(ccp(location->x + r*sin(alfa*M_PI/180), location->y + r*cos(alfa*M_PI/180)),125,255,0);
@@ -45,7 +45,7 @@ void Mover::checkEdges()
 	if (location->y > size.height) {
 		velocity->y *= -1;
 		location->y = size.height;
-	} else if (location->y < 0) {
+	} else if (location->y <= 0) {
 		velocity->y *= -1;
 		location->y = 0;
 	}

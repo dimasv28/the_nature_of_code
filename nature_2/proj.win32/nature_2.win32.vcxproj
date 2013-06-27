@@ -131,6 +131,7 @@
     <ClInclude Include="..\Classes\DebugDraw.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="Example_2_1.h" />
+    <ClInclude Include="Example_2_2.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Mover.h" />
     <ClInclude Include="PVector.h" />
@@ -141,6 +142,7 @@
     <ClCompile Include="..\Classes\DebugDraw.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="Example_2_1.cpp" />
+    <ClCompile Include="Example_2_2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="PVector.cpp" />

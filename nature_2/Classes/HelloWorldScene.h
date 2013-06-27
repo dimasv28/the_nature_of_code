@@ -4,8 +4,10 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "Example_2_1.h"
+#include "Example_2_2.h"
 
 using namespace cocos2d;
+
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -16,6 +18,7 @@ public:
     static CCScene* scene();
 
 	void startEx_2_1(CCObject* pSender);
+	void startEx_2_2(CCObject* pSender);
     void menuCloseCallback(CCObject* pSender);
 
     // implement the "static node()" method manually
