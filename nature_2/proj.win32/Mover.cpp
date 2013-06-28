@@ -9,7 +9,8 @@ Mover::Mover(float m, float x , float y) {
 	topspeed = 6;
 	mass = m;
 
-	circle = DebugDraw::create();
+	circle = CCSprite::create("circle.png");
+	circle->setScale(mass/6);
 	addChild(circle);
 }
 
@@ -21,11 +22,7 @@ void Mover::update(PVector *mouse) {
 }
 
 void Mover::display() {
-	circle->clear();
-	float r = 5*mass;
-	for(int alfa=0; alfa<360; alfa++) {
-		circle->appendPoint(ccp(location->x + r*sin(alfa*M_PI/180), location->y + r*cos(alfa*M_PI/180)),125,255,0);
-	}
+	circle->setPosition(ccp(location->x, location->y));
 }
 
 void Mover::checkEdges() {

@@ -31,24 +31,17 @@ bool Example_2_5::init()
     do 
     {
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
-		arrLength = 5;
-		movers = new vector<Mover*>;
 
-		for (int i = 0; i < arrLength; i++) {
-			Mover *mover = new Mover(rand() % 5 + 1, rand() % (int)(size.width), 300);
-			movers->push_back(mover);
-			addChild(mover);
-		}
-		
-		c = 0.1;
-		liquid = new Liquid(0,0,size.width, size.height/2, c);
-
-		mouse = new PVector(size.width/2, size.height/2);
+		// background
+		CCSprite *background = CCSprite::create("water.png");
+		background->setPosition(ccp(size.width/2,size.height/2));
+		addChild(background, 0);
 
 		// lebel of example
 		exLabel = CCLabelTTF::create("Example 2.5: Fluid Resistance", "Arial", 16);
+		exLabel->setColor( ccc3(0,0,0));
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
-		addChild(exLabel);
+		addChild(exLabel, 1);
 
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
@@ -58,7 +51,21 @@ bool Example_2_5::init()
 		CCMenu* pMenu = CCMenu::create(pMainMenuItem, NULL);
 		pMenu->setPosition(CCPointZero);
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
-        addChild(pMenu, 1);
+        addChild(pMenu, 2);
+
+		arrLength = 5;
+		movers = new vector<Mover*>;
+
+		for (int i = 0; i < arrLength; i++) {
+			Mover *mover = new Mover(rand() % 5 + 1, rand() % (int)(size.width), 300);
+			movers->push_back(mover);
+			addChild(mover, 1);
+		}
+		
+		c = 0.2;
+		liquid = new Liquid(0,0,size.width, size.height/2, c);
+
+		mouse = new PVector(size.width/2, size.height/2);
 
 		schedule( schedule_selector(Example_2_5::moveCircle), 0.0 );
 

@@ -32,15 +32,16 @@ bool Example_2_1::init()
     {
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-		mover = new Mover(3,50,150);
-		addChild(mover);
-		
-		mouse = new PVector(size.width/2, size.height/2);
+		// background
+		CCSprite *background = CCSprite::create("background.png");
+		background->setPosition(ccp(size.width/2,size.height/2));
+		addChild(background, 0);
 
 		// lebel of example
 		exLabel = CCLabelTTF::create("Example 2.1: Forces", "Arial", 16);
+		exLabel->setColor( ccc3(0,0,0));
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
-		addChild(exLabel);
+		addChild(exLabel, 1);
 
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
@@ -50,7 +51,12 @@ bool Example_2_1::init()
 		CCMenu* pMenu = CCMenu::create(pMainMenuItem, NULL);
 		pMenu->setPosition(CCPointZero);
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
-        addChild(pMenu, 1);
+        addChild(pMenu, 2);
+
+		mover = new Mover(3,50,150);
+		addChild(mover, 1);
+		
+		mouse = new PVector(size.width/2, size.height/2);
 
 		schedule( schedule_selector(Example_2_1::moveCircle), 0.0 );
 

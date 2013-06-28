@@ -4,6 +4,8 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 
+using namespace cocos2d;
+
 class Liquid {
 protected:
 	float x,y,w,h;

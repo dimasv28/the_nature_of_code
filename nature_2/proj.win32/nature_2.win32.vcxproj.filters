@@ -27,6 +27,15 @@
     <Image Include="..\Resources\HelloWorld.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\circle.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\water.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\background.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="nature_2.rc">
@@ -64,10 +73,10 @@
     <ClInclude Include="Example_2_3.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Liquid.h">
+    <ClInclude Include="Example_2_5.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Example_2_5.h">
+    <ClInclude Include="Liquid.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
