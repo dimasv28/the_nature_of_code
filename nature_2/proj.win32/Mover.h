@@ -5,6 +5,7 @@
 #include "Box2D/Box2D.h"
 #include "DebugDraw.h"
 #include "PVector.h"
+#include "Liquid.h"
 
 using namespace cocos2d;
 
@@ -27,6 +28,9 @@ public:
 
 	PVector *getVelocity() { return velocity; };
 	float getMass() { return mass; };
+
+	boolean isInside(Liquid *l);
+	void drag(Liquid *l);
 };
 
 #endif  __MOVER__

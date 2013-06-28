@@ -25,9 +25,6 @@ public:
 	virtual bool init(); 
     static CCScene* scene();
 
-	//void keyUp(int keyCode);
-	void keyDown(int keyCode);
-
 	void goMainMenu(CCObject* pSender);
 	void moveCircle(float dt);
 	void ccTouchesMoved(CCSet* touches, CCEvent* event);
