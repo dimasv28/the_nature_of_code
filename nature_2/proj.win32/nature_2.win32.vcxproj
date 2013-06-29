@@ -133,10 +133,12 @@
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\DebugDraw.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="Attractor.h" />
     <ClInclude Include="Example_2_1.h" />
     <ClInclude Include="Example_2_2.h" />
     <ClInclude Include="Example_2_3.h" />
     <ClInclude Include="Example_2_5.h" />
+    <ClInclude Include="Example_2_6.h" />
     <ClInclude Include="Liquid.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Mover.h" />
@@ -147,10 +149,12 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\DebugDraw.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="Attractor.cpp" />
     <ClCompile Include="Example_2_1.cpp" />
     <ClCompile Include="Example_2_2.cpp" />
     <ClCompile Include="Example_2_3.cpp" />
     <ClCompile Include="Example_2_5.cpp" />
+    <ClCompile Include="Example_2_6.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="PVector.cpp" />

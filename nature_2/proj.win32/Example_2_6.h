@@ -1,20 +1,22 @@
-#ifndef __EXAMPLE_2_1__
-#define __EXAMPLE_2_1__
+#ifndef __EXAMPLE_2_6__
+#define __EXAMPLE_2_6__
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "PVector.h"
 #include "Mover.h"
-
-#define W_KEY 87
+#include "Attractor.h"
 
 using namespace cocos2d;
+using namespace std;
 class Mover;
+class Attractor;
 
-class Example_2_1 : public CCLayer
+class Example_2_6 : public CCLayer
 {
 protected:
-	Mover *mover;
+ 	Mover *mover;
+	Attractor  *attractor ;
 	PVector *mouse;
 	CCLabelTTF *exLabel;
 	
@@ -26,7 +28,7 @@ public:
 	void moveCircle(float dt);
 	void ccTouchesMoved(CCSet* touches, CCEvent* event);
 
-	CREATE_FUNC(Example_2_1);
+	CREATE_FUNC(Example_2_6);
 };
 
-#endif  __EXAMPLE_2_1__
+#endif  __EXAMPLE_2_6__

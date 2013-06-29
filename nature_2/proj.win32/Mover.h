@@ -8,7 +8,7 @@
 
 using namespace cocos2d;
 
-class Mover : public cocos2d::CCLayer {
+class Mover : public CCLayer {
 protected:
 	PVector *location;
 	PVector *velocity;
@@ -25,6 +25,7 @@ public:
 	void checkEdges();
 	void applyForce(PVector *force);
 
+	PVector *getLocation() { return location; };
 	PVector *getVelocity() { return velocity; };
 	float getMass() { return mass; };
 

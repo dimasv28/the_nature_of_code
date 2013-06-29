@@ -61,7 +61,6 @@ bool Example_2_1::init()
 		schedule( schedule_selector(Example_2_1::moveCircle), 0.0 );
 
 		setTouchEnabled(true);
-		CCDirector::sharedDirector()->getKeyboardDispatcher()->addDelegate(this);
 
         bRet = true;
     } while (0);
@@ -97,12 +96,4 @@ void Example_2_1::ccTouchesMoved(CCSet* touches, CCEvent* event)
 
 	mouse->x = location.x;
 	mouse->y = location.y;
-}
-
-void Example_2_1::keyDown(int keyCode)
-{
-	if(keyCode == W_KEY)
-	{// w key
-
-	}
 }

@@ -1,9 +1,9 @@
-#include "Example_1_7.h"
+#include "Example_2_6.h"
 #include "HelloWorldScene.h"
 
 using namespace cocos2d;
 
-CCScene* Example_1_7::scene()
+CCScene* Example_2_6::scene()
 {
     CCScene * scene = NULL;
     do 
@@ -13,7 +13,7 @@ CCScene* Example_1_7::scene()
         CC_BREAK_IF(! scene);
 
         // 'layer' is an autorelease object
-        Example_1_7 *layer = Example_1_7::create();
+        Example_2_6 *layer = Example_2_6::create();
         CC_BREAK_IF(! layer);
 
         // add layer as a child to scene
@@ -25,34 +25,43 @@ CCScene* Example_1_7::scene()
 }
 
 // on "init" you need to initialize your instance
-bool Example_1_7::init()
+bool Example_2_6::init()
 {
     bool bRet = false;
     do 
     {
 		CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-		mover = new Mover();
-		addChild(mover);
-		
-		mouse = new PVector(size.width/2, size.height/2);
+		// background
+		CCSprite *background = CCSprite::create("background.png");
+		background->setPosition(ccp(size.width/2,size.height/2));
+		addChild(background, 0);
 
 		// lebel of example
-		exLabel = CCLabelTTF::create("Example 1.10: Accelerating towards the mouse", "Arial", 16);
+		exLabel = CCLabelTTF::create("Example 2.6: Attraction", "Arial", 16);
+		exLabel->setColor( ccc3(0,0,0));
 		exLabel->setPosition(ccp(size.width/2,size.height-20));
-		addChild(exLabel);
+		addChild(exLabel, 1);
 
 		CCMenuItemImage *pMainMenuItem = CCMenuItemImage::create(
             "CloseNormal.png",
             "CloseSelected.png",
             this,
-            menu_selector(Example_1_7::goMainMenu));
+            menu_selector(Example_2_6::goMainMenu));
 		CCMenu* pMenu = CCMenu::create(pMainMenuItem, NULL);
 		pMenu->setPosition(CCPointZero);
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
-        addChild(pMenu, 1);
+        addChild(pMenu, 2);
 
-		schedule( schedule_selector(Example_1_7::moveCircle), 0.0 );
+		mover = new Mover(2,350,200);
+		addChild(mover, 1);
+
+		attractor = new Attractor();
+		addChild(attractor, 1);
+		
+		mouse = new PVector(size.width/2, size.height/2);
+
+		schedule( schedule_selector(Example_2_6::moveCircle), 0.0 );
 
 		setTouchEnabled(true);
 
@@ -62,22 +71,26 @@ bool Example_1_7::init()
     return bRet;
 }
 
-void Example_1_7::goMainMenu(CCObject* pSender)
+void Example_2_6::goMainMenu(CCObject* pSender)
 {
     CCScene *pHelloScene = HelloWorld::scene();
 	CCDirector::sharedDirector()->replaceScene(pHelloScene);
 }
 
-void Example_1_7::moveCircle(float dt)
+void Example_2_6::moveCircle(float dt)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
+	PVector *force = attractor->attract(mover);
+	mover->applyForce(force);
 	mover->update(mouse);
+	attractor->update(mouse);
+
 	mover->display();
-	//mover->checkEdges(); // comment for example 1.10
+	attractor->display();
 }
 
-void Example_1_7::ccTouchesMoved(CCSet* touches, CCEvent* event)
+void Example_2_6::ccTouchesMoved(CCSet* touches, CCEvent* event)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	CCTouch* touch = (CCTouch*)( touches->anyObject() );
