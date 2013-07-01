@@ -8,6 +8,7 @@ Mover::Mover(float m, float x , float y) {
 	acceleration = new PVector(0,0);
 	topspeed = 6;
 	mass = m;
+	G = 0.4;
 
 	circle = CCSprite::create("circle.png");
 	circle->setScale(mass/6);
@@ -69,4 +70,16 @@ void Mover::drag(Liquid *l) {
 	drag->mult(dragMagnitude);
 
 	applyForce(drag);
+}
+
+PVector* Mover::attract(Mover *m) {
+	PVector *force = PVector::sub(location, m->getLocation());
+	float distance = force->mag();
+	distance = constrain(distance,5,25);
+
+	force->normalize();
+	float strength = (G * mass * m->getMass()) / (distance * distance);
+	force->mult(strength);
+
+	return force;
 }

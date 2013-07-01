@@ -85,6 +85,12 @@
     <ClInclude Include="Example_2_6.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Example_2_7.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Example_2_8.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -121,6 +127,12 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Attractor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_2_7.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_2_8.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,6 +8,8 @@
 #include "Example_2_3.h"
 #include "Example_2_5.h"
 #include "Example_2_6.h"
+#include "Example_2_7.h"
+#include "Example_2_8.h"
 
 using namespace cocos2d;
 
@@ -25,6 +27,8 @@ public:
 	void startEx_2_3(CCObject* pSender);
 	void startEx_2_5(CCObject* pSender);
 	void startEx_2_6(CCObject* pSender);
+	void startEx_2_7(CCObject* pSender);
+	void startEx_2_8(CCObject* pSender);
     void menuCloseCallback(CCObject* pSender);
 
     // implement the "static node()" method manually
