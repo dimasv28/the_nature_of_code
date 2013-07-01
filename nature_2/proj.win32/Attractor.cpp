@@ -3,10 +3,10 @@
 Attractor::Attractor() {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	location = new PVector(size.width/2, size.height/2);
-	mass = 8;
-	G = 10;
+	mass = 20;
+	G = 1;
 	circle = CCSprite::create("circle.png");
-	circle->setScale(mass/6);
+	circle->setScale(mass/20);
 	addChild(circle);
 }
 
@@ -21,7 +21,7 @@ void Attractor::update(PVector *mouse) {
 PVector* Attractor::attract(Mover *m) {
 	PVector *force = PVector::sub(location, m->getLocation());
 	float distance = force->mag();
-	distance = constrain(distance,5,100);
+	distance = constrain(distance,5,25);
 
 	force->normalize();
 	float strength = (G * mass * m->getMass()) / (distance * distance);

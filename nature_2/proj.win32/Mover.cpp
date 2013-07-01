@@ -4,7 +4,7 @@ Mover::Mover(float m, float x , float y) {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
 	location = new PVector(x, y);
-    velocity = new PVector(0,0);
+    velocity = new PVector(rand() % 2 + 1, rand() % 2 + 1);
 	acceleration = new PVector(0,0);
 	topspeed = 6;
 	mass = m;
