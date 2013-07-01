@@ -61,9 +61,6 @@
     <ClInclude Include="PVector.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DebugDraw.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="Example_2_1.h">
       <Filter>include</Filter>
     </ClInclude>
@@ -106,9 +103,6 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="PVector.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\DebugDraw.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Example_2_1.cpp">
