@@ -22,10 +22,12 @@ bool HelloWorld::init() {
 		CCLabelTTF* ex_3_3_label = CCLabelTTF::create("Example 3.3", "Arial", 20);
 
 		CCMenuItemLabel *ex_3_1_item = CCMenuItemLabel::create(ex_3_1_label,this,menu_selector(HelloWorld::startEx_3_1));
+		CCMenuItemLabel *ex_3_2_item = CCMenuItemLabel::create(ex_3_2_label,this,menu_selector(HelloWorld::startEx_3_2));
 
-		CCMenu* pMenu = CCMenu::create(ex_3_1_item, NULL);
+		CCMenu* pMenu = CCMenu::create(ex_3_1_item, ex_3_2_item, NULL);
         pMenu->setPosition(CCPointZero);
 		ex_3_1_item->setPosition(ccp(size.width / 2, size.height - 50));
+		ex_3_2_item->setPosition(ccp(size.width / 2, size.height - 80));
 		addChild(pMenu, 1);
 
         bRet = true;
@@ -36,6 +38,11 @@ bool HelloWorld::init() {
 
 void HelloWorld::startEx_3_1(CCObject* pSender) {
 	CCScene *pPlayScene = Example_3_1::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
+}
+
+void HelloWorld::startEx_3_2(CCObject* pSender) {
+	CCScene *pPlayScene = Example_3_2::scene();
 	CCDirector::sharedDirector()->replaceScene(pPlayScene);
 }
 

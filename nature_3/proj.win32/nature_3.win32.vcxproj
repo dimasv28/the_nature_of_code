@@ -123,6 +123,7 @@
     <Image Include="..\Resources\CloseNormal.png" />
     <Image Include="..\Resources\CloseSelected.png" />
     <Image Include="..\Resources\HelloWorld.png" />
+    <Image Include="..\Resources\rect.png" />
     <Image Include="res\nature_3.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -131,16 +132,23 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="Attractor.h" />
     <ClInclude Include="Example_3_1.h" />
+    <ClInclude Include="Example_3_2.h" />
+    <ClInclude Include="Liquid.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Mover.h" />
     <ClInclude Include="PVector.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="Attractor.cpp" />
     <ClCompile Include="Example_3_1.cpp" />
+    <ClCompile Include="Example_3_2.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mover.cpp" />
     <ClCompile Include="PVector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

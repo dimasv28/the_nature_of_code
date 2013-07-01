@@ -33,6 +33,9 @@
     <Image Include="..\Resources\circle.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\rect.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="nature_3.rc">
@@ -58,6 +61,18 @@
     <ClInclude Include="Example_3_1.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Mover.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Liquid.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Example_3_2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Attractor.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,6 +88,15 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Example_3_1.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_2.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Attractor.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
