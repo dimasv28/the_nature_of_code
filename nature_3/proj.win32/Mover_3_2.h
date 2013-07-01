@@ -1,5 +1,5 @@
-#ifndef __MOVER__
-#define __MOVER__
+#ifndef __MOVER_3_2__
+#define __MOVER_3_2__
 
 #define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 
@@ -10,7 +10,7 @@
 
 using namespace cocos2d;
 
-class Mover : public CCLayer {
+class Mover_3_2 : public CCLayer {
 protected:
 	PVector *location;
 	PVector *velocity;
@@ -25,7 +25,7 @@ protected:
 	CCSprite *rect;
 
 public:
-	Mover(float m, float x , float y);
+	Mover_3_2(float m, float x , float y);
 	void update(PVector *mouse);
 	void display();
 	void checkEdges();
@@ -38,7 +38,7 @@ public:
 
 	boolean isInside(Liquid *l);
 	void drag(Liquid *l);
-	PVector* attract(Mover *m);
+	PVector* attract(Mover_3_2 *m);
 };
 
-#endif  __MOVER__
+#endif  __MOVER_3_2__

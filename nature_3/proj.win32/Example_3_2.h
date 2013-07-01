@@ -4,18 +4,18 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "PVector.h"
-#include "Mover.h"
+#include "Mover_3_2.h"
 #include "Attractor.h"
 
 using namespace cocos2d;
 using namespace std;
-class Mover;
+class Mover_3_2;
 class Attractor;
 
 class Example_3_2 : public CCLayer {
 protected:
- 	vector<Mover*> *movers;
-	vector<Mover*>::iterator the_iterator;
+ 	vector<Mover_3_2*> *movers;
+	vector<Mover_3_2*>::iterator the_iterator;
 	int arrLength;
 	Attractor *attractor ;
 	PVector *mouse;

@@ -21,7 +21,8 @@ public:
 	float mag();
 	void normalize();
 	void limit(float max);
-	void random2D();
+	void random2D(); // rand -1 / 1
+	float heading(); // get the 2D direction angle, in radians
 
 	static PVector *add(PVector *v1, PVector *v2);
 	static PVector *sub(PVector *v1, PVector *v2);

@@ -61,9 +61,6 @@
     <ClInclude Include="Example_3_1.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Mover.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="Liquid.h">
       <Filter>include</Filter>
     </ClInclude>
@@ -71,6 +68,15 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="Attractor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover_3_2.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Example_3_3.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,13 +96,19 @@
     <ClCompile Include="Example_3_1.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Mover.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="Example_3_2.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Attractor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover_3_2.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_3.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

@@ -44,13 +44,16 @@ void PVector::limit(float max) {
 }
 
 void PVector::random2D() {
-// rand -1 / 1
 	int r1 = rand() % 2;
 	int r2 = rand() % 2;
 	if(!r1)	{ r1 = -1; }
 	if(!r2)	{ r2 = -1; }
 	x = r1;
 	y = r2;
+}
+
+float PVector::heading() {
+	return atan2(y,x);
 }
 
 PVector *PVector::add(PVector *v1, PVector *v2) {

@@ -6,7 +6,7 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "PVector.h"
-#include "Mover.h"
+#include "Mover_3_2.h"
 
 using namespace cocos2d;
 
@@ -21,7 +21,7 @@ protected:
 public:
 	Attractor();
 	void display();
-	PVector *attract(Mover *m);
+	PVector *attract(Mover_3_2 *m);
 	void update(PVector *mouse);
 
 	float getMass() { return mass; };

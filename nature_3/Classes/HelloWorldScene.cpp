@@ -23,11 +23,13 @@ bool HelloWorld::init() {
 
 		CCMenuItemLabel *ex_3_1_item = CCMenuItemLabel::create(ex_3_1_label,this,menu_selector(HelloWorld::startEx_3_1));
 		CCMenuItemLabel *ex_3_2_item = CCMenuItemLabel::create(ex_3_2_label,this,menu_selector(HelloWorld::startEx_3_2));
+		CCMenuItemLabel *ex_3_3_item = CCMenuItemLabel::create(ex_3_3_label,this,menu_selector(HelloWorld::startEx_3_3));
 
-		CCMenu* pMenu = CCMenu::create(ex_3_1_item, ex_3_2_item, NULL);
+		CCMenu* pMenu = CCMenu::create(ex_3_1_item, ex_3_2_item, ex_3_3_item, NULL);
         pMenu->setPosition(CCPointZero);
 		ex_3_1_item->setPosition(ccp(size.width / 2, size.height - 50));
 		ex_3_2_item->setPosition(ccp(size.width / 2, size.height - 80));
+		ex_3_3_item->setPosition(ccp(size.width / 2, size.height - 110));
 		addChild(pMenu, 1);
 
         bRet = true;
@@ -43,6 +45,11 @@ void HelloWorld::startEx_3_1(CCObject* pSender) {
 
 void HelloWorld::startEx_3_2(CCObject* pSender) {
 	CCScene *pPlayScene = Example_3_2::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
+}
+
+void HelloWorld::startEx_3_3(CCObject* pSender) {
+	CCScene *pPlayScene = Example_3_3::scene();
 	CCDirector::sharedDirector()->replaceScene(pPlayScene);
 }
 
