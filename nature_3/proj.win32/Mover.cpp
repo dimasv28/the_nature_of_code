@@ -25,11 +25,11 @@ void Mover::update(PVector *mouse) {
     dir->mult(0.3);
 	acceleration = dir;
 
-	angle = velocity->heading();
-
 	velocity->add(acceleration);
 	velocity->limit(topspeed);
     location->add(velocity);
+
+	angle = velocity->heading();
 }
 
 void Mover::display() {

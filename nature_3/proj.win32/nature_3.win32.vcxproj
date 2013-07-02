@@ -136,6 +136,7 @@
     <ClInclude Include="Example_3_1.h" />
     <ClInclude Include="Example_3_2.h" />
     <ClInclude Include="Example_3_3.h" />
+    <ClInclude Include="Example_3_4.h" />
     <ClInclude Include="Liquid.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Mover.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Example_3_1.cpp" />
     <ClCompile Include="Example_3_2.cpp" />
     <ClCompile Include="Example_3_3.cpp" />
+    <ClCompile Include="Example_3_4.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="Mover_3_2.cpp" />

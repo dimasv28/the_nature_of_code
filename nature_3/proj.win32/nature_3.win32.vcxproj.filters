@@ -79,6 +79,9 @@
     <ClInclude Include="Mover.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Example_3_4.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -109,6 +112,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Mover.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_4.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
