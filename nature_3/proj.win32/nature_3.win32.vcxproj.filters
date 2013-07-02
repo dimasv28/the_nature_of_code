@@ -82,6 +82,9 @@
     <ClInclude Include="Example_3_4.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Example_3_5.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -115,6 +118,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Example_3_4.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_5.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
