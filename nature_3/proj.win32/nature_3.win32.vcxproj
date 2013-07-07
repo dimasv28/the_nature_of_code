@@ -138,10 +138,13 @@
     <ClInclude Include="Example_3_3.h" />
     <ClInclude Include="Example_3_4.h" />
     <ClInclude Include="Example_3_5.h" />
+    <ClInclude Include="Example_3_7.h" />
+    <ClInclude Include="Example_3_8.h" />
     <ClInclude Include="Liquid.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Mover.h" />
     <ClInclude Include="Mover_3_2.h" />
+    <ClInclude Include="Oscillator.h" />
     <ClInclude Include="PVector.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -154,9 +157,12 @@
     <ClCompile Include="Example_3_3.cpp" />
     <ClCompile Include="Example_3_4.cpp" />
     <ClCompile Include="Example_3_5.cpp" />
+    <ClCompile Include="Example_3_7.cpp" />
+    <ClCompile Include="Example_3_8.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="Mover_3_2.cpp" />
+    <ClCompile Include="Oscillator.cpp" />
     <ClCompile Include="PVector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

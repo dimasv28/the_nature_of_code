@@ -41,4 +41,4 @@ public:
 	PVector* attract(Mover *m);
 };
 
-#endif  __MOVER__
+#endif // __MOVER__
