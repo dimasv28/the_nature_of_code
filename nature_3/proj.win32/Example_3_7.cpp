@@ -39,21 +39,20 @@ bool Example_3_7::init() {
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
         addChild(pMenu, 2);
 
-		angle = 0;
-		aVelocity = 0.05;
-		
-		frameCount = 0;
-		period = 120;
-		amplitude = 200;
+		// "replace" coordinate system at the center of the screen
+		centerPoint = new CCNode();
+		centerPoint->setAnchorPoint(ccp(0,0));
+		centerPoint->setPosition(size.width/2,size.height/2);
+		addChild(centerPoint);
 
-		// add circle and line
-		circle = CCSprite::create("circle.png");
-		addChild(circle);
+		arrLength = 10;
+		oscillators = new vector<Oscillator*>;
 
-		line = CCSprite::create("line.png");
-		line->setAnchorPoint( ccp(0, 0) );
-		line->setPosition( ccp(size.width/2, size.height/2) );
-		addChild(line);
+		for (int i = 0; i < arrLength; i++) {
+			Oscillator *oscillator = new Oscillator();
+			oscillators->push_back(oscillator);
+			centerPoint->addChild(oscillator);
+		}
 
 		schedule( schedule_selector(Example_3_7::moveCircle), 0.0 );
 
@@ -69,12 +68,10 @@ void Example_3_7::goMainMenu(CCObject* pSender) {
 }
 
 void Example_3_7::moveCircle(float dt) {
-	CCSize size = CCDirector::sharedDirector()->getWinSize();
-
-	float x = amplitude * cos(angle);
-	angle += aVelocity;
-
-	circle->setPosition( ccp(x + size.width/2, size.height/2) );
-	line->setScaleX( x / line->getContentSize().width );
-	frameCount++;
+	the_iterator = oscillators->begin();
+	while (the_iterator != oscillators->end()) {
+		(*the_iterator)->oscillate();
+		(*the_iterator)->display();
+		++the_iterator;
+	}
 }

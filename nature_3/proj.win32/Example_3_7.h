@@ -3,21 +3,19 @@
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
+#include "Oscillator.h"
 
 using namespace cocos2d;
+using namespace std;
+class Oscillator;
 
 class Example_3_7 : public CCLayer {
 protected:
-	CCSprite *circle;
-	CCSprite *line;
-	float angle;
-	float aVelocity;
-
+	vector<Oscillator*> *oscillators;
+	vector<Oscillator*>::iterator the_iterator;
+	int arrLength;
+	CCNode *centerPoint;
 	CCLabelTTF *exLabel;
-
-	float frameCount;
-	float period;
-	float amplitude;
 	
 public:
 	virtual bool init(); 

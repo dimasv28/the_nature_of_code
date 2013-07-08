@@ -1,28 +1,27 @@
 #ifndef __EXAMPLE_3_8__
 #define __EXAMPLE_3_8__
 
+// Re-maps a number from one range to another
+#define mapProc(value,start1,stop1,start2,stop2) (start2+(value-start1)*(stop2-start2)/(stop1-start1))
+
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "Oscillator.h"
+#include "DebugDraw.h"
 
 using namespace cocos2d;
-using namespace std;
-class Oscillator;
 
 class Example_3_8 : public CCLayer {
 protected:
-	vector<Oscillator*> *oscillators;
-	vector<Oscillator*>::iterator the_iterator;
-	int arrLength;
-	CCNode *centerPoint;
+	float angle;
+	float angleVel;
+	float amplitude;
+	DebugDraw *wave;
 	CCLabelTTF *exLabel;
 	
 public:
 	virtual bool init(); 
     static CCScene* scene();
-
 	void goMainMenu(CCObject* pSender);
-	void moveCircle(float dt);
 
 	CREATE_FUNC(Example_3_8);
 };

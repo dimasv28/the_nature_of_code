@@ -39,24 +39,21 @@ bool Example_3_8::init() {
 		pMainMenuItem->setPosition(ccp(size.width - 20, 20));
         addChild(pMenu, 2);
 
-		// "replace" coordinate system at the center of the screen
-		centerPoint = new CCNode();
-		centerPoint->setAnchorPoint(ccp(0,0));
-		centerPoint->setPosition(size.width/2,size.height/2);
-		addChild(centerPoint);
+		angle = 0;
+		angleVel = 0.2;
+		amplitude = 100;
 
-		arrLength = 10;
-		oscillators = new vector<Oscillator*>;
+		wave = DebugDraw::create();
+		addChild(wave, 1);
 
-		for (int i = 0; i < arrLength; i++) {
-			Oscillator *oscillator = new Oscillator();
-			oscillators->push_back(oscillator);
-			centerPoint->addChild(oscillator);
+		for(int x = 0; x <= size.width; x+=10) {
+			float y1 = mapProc(sin(angle),(-1),1,0,size.height);
+			float y2 = mapProc(sin(angle + angleVel),(-1),1,0,size.height);
+			wave->appendLine(ccp(x, y1), ccp(x+10, y2), 0, 0, 0, 2);
+			angle +=angleVel;
 		}
 
-		schedule( schedule_selector(Example_3_8::moveCircle), 0.0 );
-
-        bRet = true;
+		bRet = true;
     } while (0);
 
     return bRet;
@@ -65,13 +62,4 @@ bool Example_3_8::init() {
 void Example_3_8::goMainMenu(CCObject* pSender) {
     CCScene *pHelloScene = HelloWorld::scene();
 	CCDirector::sharedDirector()->replaceScene(pHelloScene);
-}
-
-void Example_3_8::moveCircle(float dt) {
-	the_iterator = oscillators->begin();
-	while (the_iterator != oscillators->end()) {
-		(*the_iterator)->oscillate();
-		(*the_iterator)->display();
-		++the_iterator;
-	}
 }

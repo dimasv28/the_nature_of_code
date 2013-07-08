@@ -26,7 +26,7 @@ void Oscillator::display() {
 
 	float x = sin(angle->x)*amplitude->x;
 	float y = sin(angle->y)*amplitude->y;
- 
+
 	circle->setPosition( ccp(x, y) );
 	line->setScaleX( sqrt(x*x + y*y) / line->getContentSize().width );
 	line->setRotation( - atan2(y, x) * 180 / M_PI );
