@@ -10,6 +10,7 @@
 #include "Example_3_5.h"
 #include "Example_3_7.h"
 #include "Example_3_8.h"
+#include "Example_3_9.h"
 
 using namespace cocos2d;
 
@@ -27,6 +28,7 @@ public:
 	void startEx_3_5(CCObject* pSender);
 	void startEx_3_7(CCObject* pSender);
 	void startEx_3_8(CCObject* pSender);
+	void startEx_3_9(CCObject* pSender);
 
     void menuCloseCallback(CCObject* pSender);
 

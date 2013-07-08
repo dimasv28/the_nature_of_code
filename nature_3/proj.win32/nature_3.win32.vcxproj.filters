@@ -97,6 +97,9 @@
     <ClInclude Include="..\Classes\DebugDraw.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Example_3_9.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -145,6 +148,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\DebugDraw.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_9.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
