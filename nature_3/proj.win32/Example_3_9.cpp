@@ -68,21 +68,14 @@ void Example_3_9::goMainMenu(CCObject* pSender) {
 void Example_3_9::moveCircle(float dt) {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-	//frameCount ++;
-	//if (frameCount <= 10) {
-		angle = startAngle;
-		the_iterator = circles->begin();
-		while (the_iterator != circles->end()) {
-			float y = mapProc(sin(angle),(-1),1,0,size.height);
-			(*the_iterator)->setPositionY(y);
-			angle +=angleVel;
+	angle = startAngle;
+	the_iterator = circles->begin();
+	while (the_iterator != circles->end()) {
+		float y = mapProc(sin(angle),(-1),1,0,size.height);
+		(*the_iterator)->setPositionY(y);
+		angle +=angleVel;
 
-			++the_iterator;
-		}
-		startAngle += 0.02;
-	//}
-	//else {
-	//	frameCount = 0;
-	//	startAngle += 0.2;
-	//}
+		++the_iterator;
+	}
+	startAngle += 0.02;
 }

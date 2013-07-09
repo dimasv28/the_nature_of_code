@@ -32,4 +32,4 @@ public:
 	CREATE_FUNC(Example_3_2);
 };
 
-#endif  __EXAMPLE_3_2__
+#endif

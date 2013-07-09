@@ -1,18 +1,16 @@
-#ifndef __EXAMPLE_3_3__
-#define __EXAMPLE_3_3__
+#ifndef __EXAMPLE_3_10__
+#define __EXAMPLE_3_10__
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
-#include "PVector.h"
-#include "Mover.h"
+#include "Pendulum.h"
 
 using namespace cocos2d;
-class Mover;
 
-class Example_3_3 : public cocos2d::CCLayer
+class Example_3_10 : public cocos2d::CCLayer
 {
 protected:
-	Mover *mover;
+	Pendulum *pendulum;
 	PVector *mouse;
 	CCLabelTTF *exLabel;
 	
@@ -24,7 +22,7 @@ public:
 	void moveCircle(float dt);
 	void ccTouchesMoved(CCSet* touches, CCEvent* event);
 
-	CREATE_FUNC(Example_3_3);
+	CREATE_FUNC(Example_3_10);
 };
 
 #endif

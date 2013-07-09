@@ -12,6 +12,7 @@ public:
 	float y;
 
 	PVector();
+	PVector(PVector *p);
 	PVector(float x_, float y_);
 
 	void add(PVector *v);

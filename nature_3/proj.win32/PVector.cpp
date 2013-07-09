@@ -1,6 +1,16 @@
 #include "PVector.h"
 
-PVector::PVector(float x_, float y_)	{
+PVector::PVector() {
+	x = 0;
+	y = 0;
+}
+
+PVector::PVector(PVector *p) {
+	x = p->x;
+	y = p->y;
+}
+
+PVector::PVector(float x_, float y_) {
 	x = x_;
 	y = y_;
 }

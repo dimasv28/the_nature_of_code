@@ -27,4 +27,4 @@ public:
 	CREATE_FUNC(Example_3_1);
 };
 
-#endif __EXAMPLE_3_1__
+#endif
