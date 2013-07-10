@@ -26,6 +26,7 @@ bool HelloWorld::init() {
 		CCLabelTTF* ex_3_8_label = CCLabelTTF::create("Example 3.8", "Arial", 20);
 		CCLabelTTF* ex_3_9_label = CCLabelTTF::create("Example 3.9", "Arial", 20);
 		CCLabelTTF* ex_3_10_label = CCLabelTTF::create("Example 3.10", "Arial", 20);
+		CCLabelTTF* ex_3_11_label = CCLabelTTF::create("Example 3.11", "Arial", 20);
 
 		CCMenuItemLabel *ex_3_1_item = CCMenuItemLabel::create(ex_3_1_label,this,menu_selector(HelloWorld::startEx_3_1));
 		CCMenuItemLabel *ex_3_2_item = CCMenuItemLabel::create(ex_3_2_label,this,menu_selector(HelloWorld::startEx_3_2));
@@ -36,8 +37,9 @@ bool HelloWorld::init() {
 		CCMenuItemLabel *ex_3_8_item = CCMenuItemLabel::create(ex_3_8_label,this,menu_selector(HelloWorld::startEx_3_8));
 		CCMenuItemLabel *ex_3_9_item = CCMenuItemLabel::create(ex_3_9_label,this,menu_selector(HelloWorld::startEx_3_9));
 		CCMenuItemLabel *ex_3_10_item = CCMenuItemLabel::create(ex_3_10_label,this,menu_selector(HelloWorld::startEx_3_10));
+		CCMenuItemLabel *ex_3_11_item = CCMenuItemLabel::create(ex_3_11_label,this,menu_selector(HelloWorld::startEx_3_11));
 
-		CCMenu* pMenu = CCMenu::create(ex_3_1_item, ex_3_2_item, ex_3_3_item, ex_3_4_item, ex_3_5_item, ex_3_7_item, ex_3_8_item, ex_3_9_item, ex_3_10_item, NULL);
+		CCMenu* pMenu = CCMenu::create(ex_3_1_item, ex_3_2_item, ex_3_3_item, ex_3_4_item, ex_3_5_item, ex_3_7_item, ex_3_8_item, ex_3_9_item, ex_3_10_item, ex_3_11_item, NULL);
         pMenu->setPosition(CCPointZero);
 		ex_3_1_item->setPosition(ccp(size.width / 2, size.height - 20));
 		ex_3_2_item->setPosition(ccp(size.width / 2, size.height - 40));
@@ -48,6 +50,7 @@ bool HelloWorld::init() {
 		ex_3_8_item->setPosition(ccp(size.width / 2, size.height - 140));
 		ex_3_9_item->setPosition(ccp(size.width / 2, size.height - 160));
 		ex_3_10_item->setPosition(ccp(size.width / 2, size.height - 180));
+		ex_3_11_item->setPosition(ccp(size.width / 2, size.height - 200));
 		addChild(pMenu, 1);
 
         bRet = true;
@@ -98,6 +101,11 @@ void HelloWorld::startEx_3_9(CCObject* pSender) {
 
 void HelloWorld::startEx_3_10(CCObject* pSender) {
 	CCScene *pPlayScene = Example_3_10::scene();
+	CCDirector::sharedDirector()->replaceScene(pPlayScene);
+}
+
+void HelloWorld::startEx_3_11(CCObject* pSender) {
+	CCScene *pPlayScene = Example_3_11::scene();
 	CCDirector::sharedDirector()->replaceScene(pPlayScene);
 }
 

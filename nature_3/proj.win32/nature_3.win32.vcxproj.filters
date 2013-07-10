@@ -106,6 +106,15 @@
     <ClInclude Include="Example_3_10.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="Bob.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Spring.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Example_3_11.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -163,6 +172,15 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Example_3_10.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Bob.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Spring.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_3_11.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

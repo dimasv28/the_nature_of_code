@@ -134,8 +134,10 @@
     <ClInclude Include="..\Classes\DebugDraw.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="Attractor.h" />
+    <ClInclude Include="Bob.h" />
     <ClInclude Include="Example_3_1.h" />
     <ClInclude Include="Example_3_10.h" />
+    <ClInclude Include="Example_3_11.h" />
     <ClInclude Include="Example_3_2.h" />
     <ClInclude Include="Example_3_3.h" />
     <ClInclude Include="Example_3_4.h" />
@@ -151,14 +153,17 @@
     <ClInclude Include="Pendulum.h" />
     <ClInclude Include="PVector.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Spring.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\DebugDraw.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="Attractor.cpp" />
+    <ClCompile Include="Bob.cpp" />
     <ClCompile Include="Example_3_1.cpp" />
     <ClCompile Include="Example_3_10.cpp" />
+    <ClCompile Include="Example_3_11.cpp" />
     <ClCompile Include="Example_3_2.cpp" />
     <ClCompile Include="Example_3_3.cpp" />
     <ClCompile Include="Example_3_4.cpp" />
@@ -172,6 +177,7 @@
     <ClCompile Include="Oscillator.cpp" />
     <ClCompile Include="Pendulum.cpp" />
     <ClCompile Include="PVector.cpp" />
+    <ClCompile Include="Spring.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

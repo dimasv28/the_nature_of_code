@@ -33,9 +33,6 @@ void Pendulum::display() {
 	location->y = r*cos(angle);
 	location = PVector::sub(origin, location);
 
-	float a = (angle * 180 / M_PI);
-	float b = (angle * 180 / M_PI) - 90;
-
 	line->setRotation( (angle * 180 / M_PI) + 90 );
 	circle->setPosition( ccp(location->x, location->y) );
 }
