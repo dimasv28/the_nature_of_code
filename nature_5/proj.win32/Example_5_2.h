@@ -5,6 +5,7 @@
 #include "Box2D/Box2D.h"
 #include "Boundary.h"
 #include "Box.h"
+#include <algorithm>
 
 using namespace cocos2d;
 

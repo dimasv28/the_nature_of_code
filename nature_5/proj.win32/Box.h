@@ -13,9 +13,11 @@ protected:
 	CCSprite *rect;
 	b2Body *b;
 	float w,h;
+	b2World *world;
 public:
 	Box(b2World *world, CCPoint *mouse);
 	void display();
+	bool done();
 };
 
 #endif // __BOX__

@@ -1,8 +1,9 @@
 #include "Box.h"
 
-Box::Box(b2World *world, CCPoint *mouse) {
+Box::Box(b2World *world_, CCPoint *mouse) {
 	w = 16;
 	h = 16;
+	world = world_;
  
 	b2BodyDef bd;
 	bd.position.Set(mouse->x/PTM_RATIO, mouse->y/PTM_RATIO);
@@ -32,4 +33,15 @@ Box::Box(b2World *world, CCPoint *mouse) {
 void Box::display() {
 	rect->setPosition( ccp( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO) );
 	rect->setRotation( -1 * CC_RADIANS_TO_DEGREES(b->GetAngle()) );
+}
+
+bool Box::done() {
+	CCSize size = CCDirector::sharedDirector()->getWinSizeInPixels();
+    b2Vec2 pos = b->GetPosition();
+
+    if ( (pos.y * PTM_RATIO) < (-1*w*h) ) {
+		world->DestroyBody(b);
+		return true;
+    }
+    return false;
 }

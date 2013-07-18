@@ -2,6 +2,7 @@
 #include "HelloWorldScene.h"
 
 using namespace cocos2d;
+bool IsMarkedToDelete (Box* b) { return b->done(); }
 
 CCScene* Example_5_2::scene() {
     CCScene * scene = NULL;
@@ -70,6 +71,8 @@ void Example_5_2::draw(float dt) {
 	boundary->display();
 	boundary_2->display();
 
+	boxes->erase( remove_if(boxes->begin(), boxes->end(), IsMarkedToDelete), boxes->end() );
+
 	the_iterator = boxes->begin();
 	while ( the_iterator != boxes->end() ) {
 		(*the_iterator)->display();
@@ -78,6 +81,7 @@ void Example_5_2::draw(float dt) {
 
 	world->Step(dt, 1, 1);
 }
+
 
 void Example_5_2::addBoxes(float dt) {
 	Box *box = new Box(world, mouse);
@@ -93,8 +97,7 @@ void Example_5_2::ccTouchesBegan(CCSet* touches, CCEvent* event)
 
 	mouse->setPoint(location.x, location.y);
 
-	addBoxes(0);
-	schedule( schedule_selector(Example_5_2::addBoxes), 0.1 );
+	schedule( schedule_selector(Example_5_2::addBoxes), 0.0 );
 }
 
 void Example_5_2::ccTouchesMoved(CCSet* touches, CCEvent* event)
